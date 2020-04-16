@@ -52,6 +52,8 @@ public:
 	bool Spawn(class CPlayer *pPlayer, vec2 Pos);
 	bool Remove();
 
+	void SetMaxHealth(int Amount);
+	void SetMaxArmor(int Amount);
 	bool IncreaseHealth(int Amount);
 	bool IncreaseArmor(int Amount);
 

@@ -639,12 +639,22 @@ void CCharacter::TickPaused()
 		++m_EmoteStop;
 }
 
+void CCharacter::SetMaxHealth(int Amount)
+{
+	m_MaxHealth = Amount;
+}
+
 bool CCharacter::IncreaseHealth(int Amount)
 {
 	if(m_Health >= 10)
 		return false;
 	m_Health = clamp(m_Health+Amount, 0, 10);
 	return true;
+}
+
+void CCharacter::SetMaxArmor(int Amount)
+{
+	m_MaxArmor = Amount;
 }
 
 bool CCharacter::IncreaseArmor(int Amount)
