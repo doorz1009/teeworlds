@@ -646,9 +646,9 @@ void CCharacter::SetMaxHealth(int Amount)
 
 bool CCharacter::IncreaseHealth(int Amount)
 {
-	if(m_Health >= 10)
+	if(m_Health >= m_MaxHealth)
 		return false;
-	m_Health = clamp(m_Health+Amount, 0, 10);
+	m_Health = clamp(m_Health+Amount, 0, m_MaxHealth);
 	return true;
 }
 
@@ -659,9 +659,9 @@ void CCharacter::SetMaxArmor(int Amount)
 
 bool CCharacter::IncreaseArmor(int Amount)
 {
-	if(m_Armor >= 10)
+	if(m_Armor >= m_MaxArmor)
 		return false;
-	m_Armor = clamp(m_Armor+Amount, 0, 10);
+	m_Armor = clamp(m_Armor+Amount, 0, m_MaxArmor);
 	return true;
 }
 
