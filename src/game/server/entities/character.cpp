@@ -45,6 +45,8 @@ CCharacter::CCharacter(CGameWorld *pWorld)
 : CEntity(pWorld, CGameWorld::ENTTYPE_CHARACTER, vec2(0, 0), ms_PhysSize)
 {
 	m_Health = 0;
+	m_MaxHealth = 10;
+	m_MaxArmor = 10;
 	m_Armor = 0;
 	m_TriggeredEvents = 0;
 }
