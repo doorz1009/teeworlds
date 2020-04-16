@@ -17,6 +17,7 @@
 #include "gamemodes/dm.h"
 #include "gamemodes/lms.h"
 #include "gamemodes/lts.h"
+#include "gamemodes/dbl.h"
 #include "gamemodes/mod.h"
 #include "gamemodes/tdm.h"
 #include "gamecontext.h"
@@ -1572,6 +1573,8 @@ void CGameContext::OnInit()
 		m_pController = new CGameControllerLTS(this);
 	else if(str_comp_nocase(Config()->m_SvGametype, "tdm") == 0)
 		m_pController = new CGameControllerTDM(this);
+	else if(str_comp_nocase(Config()->m_SvGametype, "dbl") == 0)
+		m_pController = new CGameControllerDBL(this);
 	else
 		m_pController = new CGameControllerDM(this);
 
