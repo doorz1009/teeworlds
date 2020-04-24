@@ -25,6 +25,7 @@ void CGameControllerDBL::Tick()
 void CGameControllerDBL::OnCharacterSpawn(CCharacter *pChr)
 {
 	pChr->SetMaxHealth(1);
+	pChr->SetMaxArmor(0);
 	pChr->IncreaseHealth(1);
 
 	// give default weapons
