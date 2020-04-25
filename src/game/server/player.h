@@ -4,6 +4,7 @@
 #define GAME_SERVER_PLAYER_H
 
 #include "alloc.h"
+#include <set>
 
 
 enum
@@ -31,6 +32,7 @@ public:
 	int GetCID() const { return m_ClientID; };
 	bool IsDummy() const { return m_Dummy; }
 
+	void AddVictim(CPlayer* Other);
 	void Tick();
 	void PostTick();
 	void Snap(int SnappingClient);
@@ -118,6 +120,8 @@ private:
 
 	CGameContext *GameServer() const { return m_pGameServer; }
 	IServer *Server() const;
+
+	std::set<CPlayer *> m_sVictimList;
 
 	//
 	bool m_Spawning;
