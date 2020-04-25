@@ -14,7 +14,7 @@ CGameControllerDBL::CGameControllerDBL(class CGameContext *pGameServer)
 {
 	m_pGameType = "DBL";
 
-	m_GameFlags = GAMEFLAG_TEAMS; // GAMEFLAG_TEAMS makes it a two-team gamemode
+	m_GameFlags = GAMEFLAG_TEAMS | GAMEFLAG_SURVIVAL; // GAMEFLAG_TEAMS makes it a two-team gamemode
 }
 
 void CGameControllerDBL::Tick()
