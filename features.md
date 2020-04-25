@@ -17,13 +17,13 @@ As a tee worlds user, I would like be able to win the game when all enemy player
 * Detect number of enemies on each death. If there is one team with nobody left, then the other team wins.
 
 
-Requirements:
-Requirement 1: All players shall have one hit point.
-Requirement 2: A new gamemode shall be available named DBL.
-Requirement 3: The gamemode shall end when any one team has no players alive.
-Requirement 4: Killers shall keep a list of their victims.
-Requirement 5: Players shall not respawn until their killer is killed.
-Requirement 6: All victims on a player's list shall respawn upon the player's death.
-Requirement 7: Hit points shall not exceed 1 hit point.
-Requirement 8: Armor points shall not exceed 0.
-Requirement 9: The gamemode shall award the match win to the team with players still alive at the end of the round.
+## Requirements:
+1. All players shall have one hit point.
+1. A new gamemode shall be available named DBL.
+1. The gamemode shall end when any one team has no players alive.
+1. Killers shall keep a list of their victims.
+1. Players shall not respawn until their killer is killed.
+1. All victims on a player's list shall respawn upon the player's death.
+1. Hit points shall not exceed 1 hit point.
+1. Armor points shall not exceed 0.
+1. The gamemode shall award the match win to the team with players still alive at the end of the round.
