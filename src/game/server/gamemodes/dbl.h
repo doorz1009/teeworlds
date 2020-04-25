@@ -12,6 +12,7 @@ public:
 	CGameControllerDBL(class CGameContext *pGameServer);
 	void OnCharacterSpawn(CCharacter *pChr);
 	int OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int Weapon);
+	void DoWincheckRound();
 
 	virtual void Tick();
 	// add more virtual functions here if you wish
