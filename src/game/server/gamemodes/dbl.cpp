@@ -22,7 +22,7 @@ void CGameControllerDBL::Tick()
 	IGameController::Tick();
 }
 
-void CGameControllerDBL::OnCharacterSpawn(CCharacter *pChr)
+void CGameControllerDBL::OnCharacterSpawn(class CCharacter *pChr)
 {
 	pChr->SetMaxHealth(1);
 	pChr->SetMaxArmor(0);
