@@ -18,7 +18,7 @@ As a tee worlds user, I would like be able to win the game when all enemy player
 
 
 ## Requirements:
-1. All players shall have one hit point.
+1. All players shall start with one hit point.
 1. A new gamemode shall be available named DBL.
 1. The gamemode shall end when any one team has no players alive.
 1. Killers shall keep a list of their victims.
