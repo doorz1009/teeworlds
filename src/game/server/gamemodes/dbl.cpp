@@ -29,7 +29,6 @@ void CGameControllerDBL::OnCharacterSpawn(class CCharacter *pChr)
 	pChr->IncreaseHealth(1);
 
 	// give default weapons
-	pChr->GiveWeapon(WEAPON_HAMMER, -1);
 	pChr->GiveWeapon(WEAPON_GUN, 10);
 }
 
