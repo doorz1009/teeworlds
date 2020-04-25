@@ -30,6 +30,9 @@ void CGameControllerDBL::OnCharacterSpawn(class CCharacter *pChr)
 
 	// give default weapons
 	pChr->GiveWeapon(WEAPON_GUN, 10);
+
+	// prevent respawn
+	pChr->GetPlayer()->m_RespawnDisabled = GetStartRespawnState();
 }
 
 int CGameControllerDBL::OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int Weapon)
