@@ -45,6 +45,8 @@ CCharacter::CCharacter(CGameWorld *pWorld)
 : CEntity(pWorld, CGameWorld::ENTTYPE_CHARACTER, vec2(0, 0), ms_PhysSize)
 {
 	m_Health = 0;
+	m_MaxHealth = 10;
+	m_MaxArmor = 10;
 	m_Armor = 0;
 	m_TriggeredEvents = 0;
 }
@@ -639,19 +641,29 @@ void CCharacter::TickPaused()
 		++m_EmoteStop;
 }
 
+void CCharacter::SetMaxHealth(int Amount)
+{
+	m_MaxHealth = Amount;
+}
+
 bool CCharacter::IncreaseHealth(int Amount)
 {
-	if(m_Health >= 10)
+	if(m_Health >= m_MaxHealth)
 		return false;
-	m_Health = clamp(m_Health+Amount, 0, 10);
+	m_Health = clamp(m_Health+Amount, 0, m_MaxHealth);
 	return true;
+}
+
+void CCharacter::SetMaxArmor(int Amount)
+{
+	m_MaxArmor = Amount;
 }
 
 bool CCharacter::IncreaseArmor(int Amount)
 {
-	if(m_Armor >= 10)
+	if(m_Armor >= m_MaxArmor)
 		return false;
-	m_Armor = clamp(m_Armor+Amount, 0, 10);
+	m_Armor = clamp(m_Armor+Amount, 0, m_MaxArmor);
 	return true;
 }
 
