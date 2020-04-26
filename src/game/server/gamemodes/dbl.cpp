@@ -44,6 +44,7 @@ int CGameControllerDBL::OnCharacterDeath(class CCharacter *pVictim, class CPlaye
 		victim->Respawn();
 		victim->m_RespawnTick = Server()->Tick();
 	}
+	pVictim->GetPlayer()->ClearVictims();
 
 	pVictim->GetPlayer()->m_RespawnTick = max(pVictim->GetPlayer()->m_RespawnTick, Server()->Tick()+Server()->TickSpeed()*GameServer()->Config()->m_SvRespawnDelayTDM);
 
