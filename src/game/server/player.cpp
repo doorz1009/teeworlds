@@ -470,3 +470,13 @@ void CPlayer::TryRespawn()
 	m_pCharacter->Spawn(this, SpawnPos);
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 }
+
+void CPlayer::ClearVictims()
+{
+	m_sVictimList.clear();
+}
+
+std::set<CPlayer *> CPlayer::GetVictims()
+{
+	return m_sVictimList;
+}
