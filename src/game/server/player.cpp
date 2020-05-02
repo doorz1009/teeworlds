@@ -471,6 +471,7 @@ void CPlayer::TryRespawn()
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 }
 
+
 void CPlayer::ClearVictims()
 {
 	m_sVictimList.clear();
@@ -479,4 +480,12 @@ void CPlayer::ClearVictims()
 std::set<CPlayer *> CPlayer::GetVictims()
 {
 	return m_sVictimList;
+}
+
+void CPlayer::AddVictim(CPlayer* Other)
+{
+	if (Other != this)
+	{
+		m_sVictimList.insert(Other);
+	}
 }
