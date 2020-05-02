@@ -32,8 +32,11 @@ public:
 	int GetCID() const { return m_ClientID; };
 	bool IsDummy() const { return m_Dummy; }
 
+	void ClearVictims();
+	std::set<CPlayer *> GetVictims();
 	void AddVictim(CPlayer* Other);
-	void Tick();
+
+  void Tick();
 	void PostTick();
 	void Snap(int SnappingClient);
 

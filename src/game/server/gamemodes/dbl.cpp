@@ -40,14 +40,13 @@ int CGameControllerDBL::OnCharacterDeath(class CCharacter *pVictim, class CPlaye
 	if (pVictim->GetPlayer() != pKiller)
 	pKiller->AddVictim(pVictim->GetPlayer());
 
-	if(pKiller && Weapon != WEAPON_GAME)
+	for (auto victim : pVictim->GetPlayer()->GetVictims())
 	{
-		// do team scoring
-		if(pKiller == pVictim->GetPlayer() || pKiller->GetTeam() == pVictim->GetPlayer()->GetTeam())
-			m_aTeamscore[pKiller->GetTeam()&1]--; // klant arschel
-		else
-			m_aTeamscore[pKiller->GetTeam()&1]++; // good shit
+		victim->m_RespawnDisabled = false;
+		victim->Respawn();
+		victim->m_RespawnTick = Server()->Tick();
 	}
+	pVictim->GetPlayer()->ClearVictims();
 
 	pVictim->GetPlayer()->m_RespawnTick = max(pVictim->GetPlayer()->m_RespawnTick, Server()->Tick()+Server()->TickSpeed()*GameServer()->Config()->m_SvRespawnDelayTDM);
 
