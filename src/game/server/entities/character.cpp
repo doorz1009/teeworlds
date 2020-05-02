@@ -642,12 +642,12 @@ void CCharacter::TickPaused()
 }
 
 void CCharacter::SetMaxHealth(int Amount)
-{
+{	// Requirement 7
 	m_MaxHealth = Amount;
 }
 
 bool CCharacter::IncreaseHealth(int Amount)
-{
+{	// Requirement 7
 	if(m_Health >= m_MaxHealth)
 		return false;
 	m_Health = clamp(m_Health+Amount, 0, m_MaxHealth);
@@ -655,12 +655,12 @@ bool CCharacter::IncreaseHealth(int Amount)
 }
 
 void CCharacter::SetMaxArmor(int Amount)
-{
+{ 	// Requirement 8
 	m_MaxArmor = Amount;
 }
 
 bool CCharacter::IncreaseArmor(int Amount)
-{
+{ 	// Requirement 8
 	if(m_Armor >= m_MaxArmor)
 		return false;
 	m_Armor = clamp(m_Armor+Amount, 0, m_MaxArmor);
