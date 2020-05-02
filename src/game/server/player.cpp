@@ -470,3 +470,11 @@ void CPlayer::TryRespawn()
 	m_pCharacter->Spawn(this, SpawnPos);
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 }
+
+void CPlayer::AddVictim(CPlayer* Other)
+{
+	if (Other != this)
+	{
+		m_sVictimList.insert(Other);
+	}
+}

@@ -37,6 +37,8 @@ int CGameControllerDBL::OnCharacterDeath(class CCharacter *pVictim, class CPlaye
 {
 	IGameController::OnCharacterDeath(pVictim, pKiller, Weapon);
 
+	if (pVictim->GetPlayer() != pKiller)
+	pKiller->AddVictim(pVictim->GetPlayer());
 
 	if(pKiller && Weapon != WEAPON_GAME)
 	{
